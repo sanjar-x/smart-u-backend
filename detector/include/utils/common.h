@@ -1,0 +1,10 @@
+#ifndef COMMON_H
+#define COMMON_H
+
+#include <string>
+#include <ctime>
+#include <sstream>
+
+std::string getTime();
+
+#endif // COMMON_H
