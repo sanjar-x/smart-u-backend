@@ -5,14 +5,13 @@ detector/
 │   │   ├── database.h
 │   │   └── image_repository.h
 │   ├── index/
-│   │   └── faiss.h
+│   │   └── index_manager.h
 │   ├── inspireface/
-│   │   ├── detector.h
-│   │   ├── recogination.h
+│   │   ├── face_feature_extractor.h
 │   │   ├── herror.h
 │   │   ├── inspireface.h
 │   │   ├── intypedef.h
-│   │   └── session.h
+│   │   └── session_manager.h
 │   ├── messages/
 │   │   └── zmqbroker.h
 │   ├── video/
@@ -32,11 +31,10 @@ detector/
 │   │   ├── camera.cpp
 │   │   └── streamer.cpp
 │   ├── index/
-│   │   └── faiss.cpp
+│   │   └── index_manager.cpp
 │   ├── inspireface/
-│   │   ├── detector.cpp
-│   │   ├── recogination.cpp
-│   │   └── session.cpp
+│   │   ├── face_feature_extractor.cpp
+│   │   └── session_manager.cpp
 │   └── utils/
 │       ├── loger.cpp
 │       └── common.cpp

@@ -1,14 +1,14 @@
 #pragma once
-#include "database/database.h"
-#include "utils/logger.h"
 #include <vector>
 #include <string>
+#include <opencv2/opencv.hpp>
+#include "database/database.h"
+#include "utils/logger.h"
 
-class Image
+struct ImageRecord
 {
-public:
     std::string id;
-    std::string file_name;
+    std::string filename;
 };
 
 class ImageRepository : public Database
@@ -17,8 +17,9 @@ public:
     ImageRepository();
     ~ImageRepository();
 
-    std::vector<Image> getImages();
+    std::vector<ImageRecord> fetchImageRecords();
+    std::pair<std::vector<std::string>, std::vector<cv::Mat>> loadImages();
 
 private:
-    std::vector<Image> parseImages(const pqxx::result &result);
+    std::vector<ImageRecord> mapDatabaseResultToImageRecords(const pqxx::result &result);
 };

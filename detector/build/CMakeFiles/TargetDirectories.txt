@@ -1,0 +1,3 @@
+/home/ocean/Desktop/backend/detector/build/CMakeFiles/main.dir
+/home/ocean/Desktop/backend/detector/build/CMakeFiles/edit_cache.dir
+/home/ocean/Desktop/backend/detector/build/CMakeFiles/rebuild_cache.dir

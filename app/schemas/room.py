@@ -24,7 +24,7 @@ class Camera(BaseModel):
 
 
 class CameraCreate(Camera):
-    pass
+    password: str
 
 
 class CameraResponse(Camera):

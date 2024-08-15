@@ -8,7 +8,7 @@ from PIL import UnidentifiedImageError, Image as PILImage
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from ..dependencies.session import get_session
 from ...schemas.student import StudentResponse
-from ...core.models import Student, Image, User
+from ...core.models import Student, Image, User, Group
 from ...services.detector.face import check_face
 
 student_router = APIRouter(prefix="/students")
@@ -30,6 +30,12 @@ async def create_student(
     group_id: UUID = Form(...),
     session: AsyncSession = Depends(get_session),
 ):
+    group = Group(id=group_id)
+    if not await group.exist(session):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Group not found",
+        )
     new_student = Student(
         group_id=group_id,
         pini=pini,
@@ -43,6 +49,7 @@ async def create_student(
     await new_student.hach_password(password)
     saved_student: Student = await new_student.save(session)
     if not upload_image.filename:
+        await new_student._delete(session)
         raise HTTPException(
             status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
             detail="Uploaded file is not a valid image",
@@ -57,6 +64,7 @@ async def create_student(
         image.verify()
     except UnidentifiedImageError:
         os.remove(image_file_path)
+        await new_student._delete(session)
         raise HTTPException(
             status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
             detail="Uploaded file is not a valid image",

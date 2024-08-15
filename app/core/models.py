@@ -216,7 +216,9 @@ class Role(Base):
     permissions: Mapped[List[Permissions]] = relationship(
         "Permissions", cascade="all, delete-orphan"
     )
-    profile_permissions: Mapped[ProfilePermission] = relationship("ProfilePermission")
+    profile_permissions: Mapped[ProfilePermission] = relationship(
+        "ProfilePermission", cascade="all, delete-orphan"
+    )
     managers: Mapped[List[Manager]] = relationship("Manager", back_populates="role")
 
     async def exist_name(self, session: AsyncSession):
@@ -401,7 +403,7 @@ class Manager(User):
     }
 
     async def search_by(self, session: AsyncSession, query: str):
-        conditions = [
+        filters = [
             self.__class__.pini.ilike(f"%{query}%"),
             self.__class__.first_name.ilike(f"%{query}%"),
             self.__class__.last_name.ilike(f"%{query}%"),
@@ -417,7 +419,7 @@ class Manager(User):
             ),
         ]
         return await self.search_with_multi_options_and_multi_filters(
-            session, options, conditions
+            session, options, filters
         )
 
     async def get_all_with_role(self, session: AsyncSession):
@@ -595,7 +597,7 @@ class Group(Base):
 
     async def search_by(self, session: AsyncSession, query: str):
         options = [
-            joinedload(self.__class__.department),  # Eagerly load Department
+            joinedload(self.__class__.department),
             joinedload(self.__class__.tutor).joinedload(
                 self.__class__.tutor.property.mapper.class_.image
             ),
@@ -738,7 +740,7 @@ class Camera(Base):
         UUID(as_uuid=True), ForeignKey("rooms.id", ondelete="CASCADE")
     )
     ip: Mapped[str] = mapped_column(INET)
-
+    password: Mapped[str] = mapped_column(VARCHAR(255))
     room: Mapped[Room] = relationship("Room", back_populates="cameras")
 
     async def exist_camera(self, session: AsyncSession):

@@ -22,7 +22,9 @@ async def create_room(
         )
     saved_room = await new_room.save(session)
     for camera in data.cameras:
-        new_camera = Camera(room_id=saved_room.id, ip=camera.ip)
+        new_camera = Camera(
+            room_id=saved_room.id, ip=camera.ip, password=camera.password
+        )
         if await new_camera.exist_camera(session):
             await saved_room._delete(session)
             raise HTTPException(

@@ -1,12 +1,14 @@
 #pragma once
-
 #include <string>
-#include <opencv2/opencv.hpp>
 
+// Structure to store camera information
 struct Camera
 {
     std::string id;
-    std::string ip_address;
+    std::string ip;
     std::string password;
-    cv::VideoCapture capture;
+
+    // Constructor
+    Camera(const std::string &cameraId, const std::string &cameraIp, const std::string &cameraPassword)
+        : id(cameraId), ip(cameraIp), password(cameraPassword) {}
 };

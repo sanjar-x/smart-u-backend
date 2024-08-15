@@ -1,4 +1,3 @@
-#include "database/database.h"
 #include "database/camera_repository.h"
 #include "utils/logger.h"
 
@@ -6,23 +5,23 @@ CameraRepository::CameraRepository() : Database() {}
 
 CameraRepository::~CameraRepository() {}
 
-std::vector<Camera> CameraRepository::parseCameras(const pqxx::result &result)
+std::vector<Camera> CameraRepository::mapDatabaseResultToCameras(const pqxx::result &result)
 {
     std::vector<Camera> cameras;
 
-    for (const auto &db_camera : result)
+    for (const auto &row : result)
     {
-        Camera camera;
-        camera.id = db_camera["id"].as<std::string>();
-        camera.ip_address = db_camera["ip_address"].as<std::string>();
-        camera.password = db_camera["password"].as<std::string>();
+
+        Camera camera(row["id"].as<std::string>(),
+                      row["ip"].as<std::string>(),
+                      row["password"].as<std::string>());
         cameras.push_back(camera);
     }
 
     return cameras;
 }
 
-std::vector<Camera> CameraRepository::getCameras()
+std::vector<Camera> CameraRepository::fetchCameras()
 {
     Logger &logger = Logger::getInstance();
     std::vector<Camera> cameras;
@@ -35,17 +34,17 @@ std::vector<Camera> CameraRepository::getCameras()
 
     try
     {
-        pqxx::work txn(*connection);
-        pqxx::result result = txn.exec("SELECT id, ip_address, password FROM cameras");
+        pqxx::work transaction(*connection);
+        pqxx::result result = transaction.exec("SELECT id, ip, password FROM cameras");
 
-        cameras = parseCameras(result);
-        txn.commit();
+        cameras = mapDatabaseResultToCameras(result);
+        transaction.commit();
 
-        logger.log(Logger::INFO, "Fetched " + std::to_string(cameras.size()) + " cameras from the database.");
+        logger.log(Logger::INFO, "Successfully fetched " + std::to_string(cameras.size()) + " cameras from the database.");
     }
     catch (const std::exception &exception)
     {
-        logger.log(Logger::ERROR, exception.what());
+        logger.log(Logger::ERROR, "Error fetching cameras: " + std::string(exception.what()));
     }
 
     return cameras;

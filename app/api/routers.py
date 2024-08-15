@@ -14,13 +14,11 @@ from .endpoints.student import student_router
 from .endpoints.subject import subject_router
 from .endpoints.slot import slot_router
 from .endpoints.pair import pair_router
-
-
 from .endpoints.settings import settings_router
+from .endpoints.system import system_router
 
-from .endpoints.user import user_router
+# from .endpoints.user import user_router
 
-# from .endpoints.system import system_router
 
 api_routers = APIRouter()
 api_routers.include_router(root_router, tags=["ROOT"])
@@ -39,11 +37,8 @@ api_routers.include_router(subject_router, tags=["SUBJECT"])
 api_routers.include_router(slot_router, tags=["SLOT"])
 api_routers.include_router(pair_router, tags=["PAIRS"])
 
+
 api_routers.include_router(settings_router, tags=["SETTINGS"])
+api_routers.include_router(system_router, tags=["SYSTEM"])
 
-api_routers.include_router(user_router, tags=["USER"])
-# api_routers.include_router(system_router, tags=["SYSTEM"])
-
-# api_routers.include_router(teacher_router, tags=["TEACHER"])
-# api_routers.include_router(group_router, tags=["GROUP"])
-# api_routers.include_router(student_router, tags=["STUDENT"])
+# api_routers.include_router(user_router, tags=["USER"])

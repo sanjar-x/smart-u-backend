@@ -1,14 +1,4 @@
-#include "logger.h"
-
-Logger::Logger()
-{
-    // Конструктор по-прежнему пуст, так как логирование в файл убрано
-}
-
-Logger::~Logger()
-{
-    // Деструктор по-прежнему пуст
-}
+#include "utils/logger.h"
 
 Logger &Logger::getInstance()
 {
@@ -16,10 +6,17 @@ Logger &Logger::getInstance()
     return instance;
 }
 
+Logger::Logger() {}
+
+Logger::~Logger() {}
+
 void Logger::log(LogLevel level, const std::string &message)
 {
-    std::lock_guard<std::mutex> guard(logMutex);
-    std::cout << getTime() << " [" << getLogLevelString(level) << "] " << message << std::endl;
+    std::lock_guard<std::mutex> lock(logMutex);
+
+    std::string levelStr = getLogLevelString(level);
+    std::cout << "[" << levelStr << "] " << message << std::endl;
+    // Вы также можете добавить запись в файл или другую систему логирования здесь.
 }
 
 std::string Logger::getLogLevelString(LogLevel level)

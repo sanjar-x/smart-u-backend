@@ -1,0 +1,83 @@
+[
+    {
+        "date": "2024-09-04",
+        "pairs": [
+            {
+                "room": {
+                    "name": "Room1",
+                    "cameras": [
+                        {
+                            "ip": "1.1.3.5"
+                        }
+                    ]
+                },
+                "slot": {
+                    "start_time": "10:00:00",
+                    "end_time": "11:00:00"
+                },
+                "teacher": {
+                    "id": "1ff35d6b-b419-4928-8a10-f370d1eefe9d",
+                    "pini": "12345678901246",
+                    "first_name": "Teacherrr",
+                    "last_name": "Teachrov",
+                    "middle_name": "null",
+                    "birth_date": "2024-08-02",
+                    "phone_number": "9981541515",
+                    "active": true,
+                    "address": "qweqweqweq",
+                    "specialization": "Egnlish",
+                    "image": {
+                        "file_path": "static/users/1ff35d6b-b419-4928-8a10-f370d1eefe9d.jpg"
+                    }
+                },
+                "subject": {
+                    "name": "Web Programming"
+                },
+                "groups": [
+                    {
+                        "name": "123b",
+                        "type": "day"
+                    }
+                ]
+            },
+            {
+                "room": {
+                    "name": "Room1",
+                    "cameras": [
+                        {
+                            "ip": "1.1.3.5"
+                        }
+                    ]
+                },
+                "slot": {
+                    "start_time": "12:00:00",
+                    "end_time": "13:00:00"
+                },
+                "teacher": {
+                    "id": "1ff35d6b-b419-4928-8a10-f370d1eefe9d",
+                    "pini": "12345678901246",
+                    "first_name": "Teacherrr",
+                    "last_name": "Teachrov",
+                    "middle_name": "null",
+                    "birth_date": "2024-08-02",
+                    "phone_number": "9981541515",
+                    "active": true,
+                    "address": "qweqweqweq",
+                    "specialization": "Egnlish",
+                    "image": {
+                        "file_path": "static/users/1ff35d6b-b419-4928-8a10-f370d1eefe9d.jpg"
+                    }
+                },
+                "subject": {
+                    "name": "AI"
+                },
+                "groups": [
+                    {
+                        "name": "123b",
+                        "type": "day"
+                    }
+                ]
+            }
+        ]
+    }
+]

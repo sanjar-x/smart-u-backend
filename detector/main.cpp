@@ -1,41 +1,47 @@
 #include <iostream>
 #include <thread>
-
-#include "database/camera_repository.h"
-#include "database/database.h"
-#include "database/image_repository.h"
-#include "index/faiss.h"
-#include "inspireface/detector.h"
-#include "inspireface/recogination.h"
-#include "inspireface/herror.h"
-#include "inspireface/inspireface.h"
-#include "inspireface/intypedef.h"
-#include "messages/zmqbroker.h"
 #include "utils/logger.h"
+#include "database/image_repository.h"
+#include "database/camera_repository.h"
+#include "inspireface/face_feature_extractor.h"
+#include "index/index_manager.h"
+#include "messages/zmqbroker.h"
 #include "video/camera.h"
 #include "video/streamer.h"
 
-void logMessages(Logger &logger, int number)
-{
-    while (true)
-    {
-        logger.log(Logger::INFO, std::to_string(number) + " Thread logging");
-    }
-}
-
 int main()
 {
-    Logger &logger = Logger::getInstance();
+    std::cout << "Starting the program..." << std::endl;
 
-    logger.log(Logger::INFO, "Application started");
+    std::cout << "Launching InspireFace..." << std::endl;
+    HResult result = HFLaunchInspireFace("/home/ocean/Desktop/smart-u-backend/detector/resource/archive/Megatron");
+    if (result != HSUCCEED)
+    {
+        std::cerr << "Failed to launch InspireFace. Error code: " << result << std::endl;
+        return 1;
+    }
 
-    std::thread t1(logMessages, std::ref(logger), 1);
-    std::thread t2(logMessages, std::ref(logger), 2);
+    IndexManager indexManager;
+    std::cout << "Building the index..." << std::endl;
+    indexManager.buildIndex();
 
-    t1.join();
-    t2.join();
+    CameraRepository cameraRepository;
+    std::cout << "Fetching cameras from the database..." << std::endl;
+    std::vector<Camera> cameras = cameraRepository.fetchCameras();
+    std::cout << "Cameras fetched: " << cameras.size() << std::endl;
 
-    logger.log(Logger::INFO, "Application ended");
+    if (cameras.empty())
+    {
+        std::cerr << "No cameras were fetched from the database. Exiting." << std::endl;
+        return 1;
+    }
+
+    std::string brokerEndpoint = "ipc:///tmp/zeromq-ipc";
+    Streamer streamer(cameras, indexManager, brokerEndpoint);
+
+    streamer.processStreams();
+
+    std::cout << "Program finished." << std::endl;
 
     return 0;
 }
