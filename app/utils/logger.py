@@ -1,3 +1,5 @@
 import logging
 
-logger = logging.getLogger("fastapi")
+
+logger = logging.getLogger("uvicorn")
+# logger.setLevel(logging.DEBUG)

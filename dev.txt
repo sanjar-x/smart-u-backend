@@ -1,1 +1,135 @@
 sudo find . -type d -name "__pycache__" -exec rm -r {} +; find . -type f -name "*.pyc" -delete
+smart-u/
+├── app/
+│   ├── api/
+│   │   ├── dependencies/
+│   │   │   ├── camera_repository.h
+│   │   │   ├── database.h
+│   │   │   └── image_repository.h
+│   │   ├── endpoints/
+│   │   │   ├── auth.py
+│   │   │   ├── department.py
+│   │   │   ├── group.py
+│   │   │   ├── manager.py
+│   │   │   ├── pair.py
+│   │   │   ├── profile.py
+│   │   │   ├── resource.py
+│   │   │   ├── role.py
+│   │   │   ├── room.py
+│   │   │   ├── root.py
+│   │   │   ├── settings.py
+│   │   │   ├── slot.py
+│   │   │   ├── student.py
+│   │   │   ├── subject.py
+│   │   │   ├── system.py
+│   │   │   ├── teacher.py
+│   │   │   └── user.py
+│   │   └── routers.py
+│   ├── connections/
+│   │   └── socketio.py
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   └── models.py
+│   ├── schemas/
+│   │   ├── auth.py
+│   │   ├── camera.py
+│   │   ├── department.py
+│   │   ├── group.py
+│   │   ├── image.py
+│   │   ├── manager.py
+│   │   ├── pair.py
+│   │   ├── permission.py
+│   │   ├── resource.py
+│   │   ├── role.py
+│   │   ├── room.py
+│   │   ├── slot.py
+│   │   ├── student.py
+│   │   ├── subject.py
+│   │   ├── system.py
+│   │   ├── teacher.py
+│   │   └── user.py
+│   ├── services/
+│   │   ├── auth/
+│   │   │   ├── current_user.h
+│   │   │   ├── password.h
+│   │   │   └── token.h
+│   │   ├── detector/
+│   │   │   └── face.py
+│   │   └── messages/
+│   │       └── zeromq.py
+│   ├── tests/
+│   │   └── test_main.py
+│   └── utils/
+│       └── logger.py
+├── detector/
+│   ├── include/
+│   │   ├── database/
+│   │   │   ├── camera_repository.h
+│   │   │   ├── database.h
+│   │   │   └── image_repository.h
+│   │   ├── index/
+│   │   │   └── index_manager.h
+│   │   ├── inspireface/
+│   │   │   ├── face_feature_extractor.h
+│   │   │   ├── herror.h
+│   │   │   ├── inspireface.h
+│   │   │   ├── intypedef.h
+│   │   │   └── session_manager.h
+│   │   ├── messages/
+│   │   │   └── zmqbroker.h
+│   │   ├── video/
+│   │   │   ├── camera.h
+│   │   │   └── streamer.h
+│   │   └── utils/
+│   │       ├── logger.h
+│   │       └── common.h
+│   ├── src/
+│   │   ├── database/
+│   │   │   ├── camera_repository.cpp
+│   │   │   ├── database.cpp
+│   │   │   └── image_repository.cpp
+│   │   ├── messages/
+│   │   │   └── zmqbroker.cpp
+│   │   ├── video/
+│   │   │   ├── camera.cpp
+│   │   │   └── streamer.cpp
+│   │   ├── index/
+│   │   │   └── index_manager.cpp
+│   │   ├── inspireface/
+│   │   │   ├── face_feature_extractor.cpp
+│   │   │   └── session_manager.cpp
+│   │   └── utils/
+│   │       ├── loger.cpp
+│   │       └── common.cpp
+│   ├── test/
+│   │   ├── database/
+│   │   │   └── test_database.cpp
+│   │   ├── messages/
+│   │   │   └── test_messagebroker.cpp
+│   │   ├── video/
+│   │   │   └── test_video.cpp
+│   │   └── main_test.cpp
+│   ├── docs/
+│   │   ├── architecture.md
+│   │   ├── usage.md
+│   │   └── api_reference.md
+│   ├── scripts/
+│   │   ├── build.sh
+│   │   ├── run.sh
+│   │   └── clean.sh
+│   ├── cmake/
+│   │   └── FindMyLibrary.cmake
+│   ├── CMakeLists.txt
+│   ├── main.cpp
+│   └── README.md
+├── static/
+│   ├── unknown/
+│   │   └── example.jpg
+│   ├── users/
+│   │   └── example.jpg
+│   ├── video/
+│   │   └── test_video.cpp
+│   └── main_test.cpp
+└── main.py
+

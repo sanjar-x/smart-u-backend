@@ -14,7 +14,7 @@ int main()
     std::cout << "Starting the program..." << std::endl;
 
     std::cout << "Launching InspireFace..." << std::endl;
-    HResult result = HFLaunchInspireFace("/home/ocean/Desktop/smart-u-backend/detector/resource/archive/Megatron");
+    HResult result = HFLaunchInspireFace("/home/ocean/Desktop/smart-u-backend/detector/resource/archive/MegatronV2");
     if (result != HSUCCEED)
     {
         std::cerr << "Failed to launch InspireFace. Error code: " << result << std::endl;

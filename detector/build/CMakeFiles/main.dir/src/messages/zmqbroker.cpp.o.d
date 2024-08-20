@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/messages/zmqbroker.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/messages/zmqbroker.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -148,7 +148,7 @@ CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/ocean/Desktop/backend/detector/include/messages/zmqbroker.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/messages/zmqbroker.h \
  /usr/include/zmq.hpp /usr/include/zmq.h /usr/include/c++/12/cassert \
  /usr/include/assert.h /usr/include/c++/12/cstring /usr/include/string.h \
  /usr/include/strings.h /usr/include/c++/12/algorithm \

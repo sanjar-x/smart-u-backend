@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/inspirefase/face_feature_extractor.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/face_feature_extractor.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/face_feature_extractor.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/face_feature_extractor.h \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -363,20 +363,20 @@ CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ocean/Desktop/backend/detector/include/inspireface/session_manager.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/inspireface.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/index/index_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/session_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/inspireface.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/index/index_manager.h \
  /usr/local/include/faiss/IndexFlat.h \
  /usr/local/include/faiss/IndexFlatCodes.h \
  /usr/local/include/faiss/Index.h /usr/local/include/faiss/MetricType.h \
  /usr/local/include/faiss/impl/platform_macros.h \
  /usr/local/include/faiss/impl/DistanceComputer.h \
- /home/ocean/Desktop/backend/detector/include/messages/zmqbroker.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/messages/zmqbroker.h \
  /usr/include/zmq.hpp /usr/include/zmq.h /usr/include/c++/12/cassert \
  /usr/include/c++/12/optional \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h

@@ -34,6 +34,7 @@ class PairCreate(Pair):
 
 class CameraResponse(BaseModel):
     model_config = config
+    id: UUID
     ip: IPvAnyAddress
 
 
@@ -65,7 +66,6 @@ class UserResponse(BaseModel):
     phone_number: str
     active: bool
     address: str
-    specialization: str
     image: ImageResponse
 
 
@@ -84,14 +84,12 @@ class GroupResponse(BaseModel):
     model_config = config
     name: str
     type: GroupType
+    students: List[UserResponse]
 
 
 class PairResponse(Pair):
-
     slot: SlotResponse
     room: RoomResponse
-
-    teacher: UserResponse
     subject: SubjectResponse
     groups: List[GroupResponse]
 

@@ -1,22 +1,26 @@
 import time
+from logging import getLogger
 import zmq
 from zmq.asyncio import Context, Socket
-from redis.asyncio import Redis
-from ...connections.socketio import sio_server
+from ..cache.redis.client import client
+from ...connections.socketio import server
+
+logger = getLogger("uvicorn")
 
 
 async def start_zeroMQ(endpoint: str):
-    r = Redis(host="localhost", port=6379, db=0)
     context = Context()  # type: ignore
     socket: Socket = context.socket(zmq.PAIR)
     socket.connect(endpoint)
-
     while True:
-        string = await socket.recv_string()
-        timestamp = time.time()
-        data = string.split(":")
-        await r.zadd(f"camera:{data[1]}:user:{data[3]}", {"time": timestamp})
-        await sio_server.emit(
-            "detect",
-            {"camera": data[1], "user": data[3], "timestamp": timestamp},
-        )
+        message = await socket.recv_string()
+        data = message.split(":")
+        if float(data[2]) < 1.0:
+            timestamp = time.time()
+            await client.zadd(
+                f"detections:camera:{data[0]}:user:{data[1]}",
+                {f"{timestamp}": timestamp},
+            )
+            await server.emit(
+                "detect", {"camera": data[0], "user": data[1]}, room=f"{data[1]}"
+            )

@@ -87,4 +87,4 @@ class StudentResponse(BaseModel):
         ],
     )
     image: ImageResponse
-    group: GroupResponse
+    group: Optional[GroupResponse]

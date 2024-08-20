@@ -149,15 +149,26 @@ void FaceFeatureExtractor::extractAndProcessFeatures(const cv::Mat &image, const
         HFReleaseImageStream(stream);
         return;
     }
-
+    auto customOption = HF_ENABLE_QUALITY | HF_ENABLE_LIVENESS;
+    result = HFMultipleFacePipelineProcessOptional(session_, stream, &multipleFaceData, customOption);
+    if (result != HSUCCEED)
+    {
+        logger.log(Logger::ERROR, "Failed to multiple face pipeline process.");
+        HFReleaseImageStream(stream);
+        return;
+    }
+    HFFaceQualityConfidence qualityConfidence = {0};
+    HFGetFaceQualityConfidence(session_, &qualityConfidence);
     for (int i = 0; i < multipleFaceData.detectedNum; ++i)
     {
         HFFaceFeature faceFeature = {0};
         result = HFFaceFeatureExtract(session_, stream, multipleFaceData.tokens[i], &faceFeature);
+
         if (result == HSUCCEED)
         {
+
             std::pair<std::string, float> searchResult = indexManager.searchIndex(faceFeature);
-            std::string message = "camera_id:" + cameraId + ":user_id:" + searchResult.first + ":distance:" + std::to_string(searchResult.second);
+            std::string message = cameraId + ":" + searchResult.first + ":" + std::to_string(searchResult.second) + ":" + std::to_string(qualityConfidence.confidence[i]);
             broker->sendMessage(message);
         }
         else

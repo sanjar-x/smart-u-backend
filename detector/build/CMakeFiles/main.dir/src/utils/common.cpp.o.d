@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/utils/common.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/utils/common.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/utils/common.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \

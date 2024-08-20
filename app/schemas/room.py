@@ -28,7 +28,7 @@ class CameraCreate(Camera):
 
 
 class CameraResponse(Camera):
-    pass
+    id: UUID = Field(title="Camera’s id", description="Camera’s id")
 
 
 class Room(BaseModel):

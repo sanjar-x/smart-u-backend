@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ocean/Desktop/backend/detector/include -I/home/ocean/Desktop/backend/detector/include/database -I/home/ocean/Desktop/backend/detector/include/index -I/home/ocean/Desktop/backend/detector/include/inspireface -I/home/ocean/Desktop/backend/detector/include/messages -I/home/ocean/Desktop/backend/detector/include/utils -I/home/ocean/Desktop/backend/detector/include/video -isystem /usr/local/include/opencv4
+CXX_INCLUDES = -I/home/ocean/Desktop/smart-u-backend/detector/include -I/home/ocean/Desktop/smart-u-backend/detector/include/database -I/home/ocean/Desktop/smart-u-backend/detector/include/index -I/home/ocean/Desktop/smart-u-backend/detector/include/inspireface -I/home/ocean/Desktop/smart-u-backend/detector/include/messages -I/home/ocean/Desktop/smart-u-backend/detector/include/utils -I/home/ocean/Desktop/smart-u-backend/detector/include/video -isystem /usr/local/include/opencv4
 
 CXX_FLAGS = -std=gnu++17
 

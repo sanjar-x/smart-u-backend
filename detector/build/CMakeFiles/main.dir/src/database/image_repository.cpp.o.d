@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/database/image_repository.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/database/image_repository.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/database/image_repository.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/database/image_repository.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/image_repository.h \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -363,7 +363,7 @@ CMakeFiles/main.dir/src/database/image_repository.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ocean/Desktop/backend/detector/include/database/database.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/database.h \
  /usr/include/pqxx/pqxx /usr/include/pqxx/array \
  /usr/include/pqxx/array.hxx /usr/include/pqxx/compiler-public.hxx \
  /usr/include/pqxx/config-public-compiler.h /usr/include/c++/12/ciso646 \
@@ -405,5 +405,5 @@ CMakeFiles/main.dir/src/database/image_repository.cpp.o: \
  /usr/include/pqxx/subtransaction /usr/include/pqxx/subtransaction.hxx \
  /usr/include/pqxx/transaction /usr/include/pqxx/transaction.hxx \
  /usr/include/pqxx/transactor /usr/include/pqxx/transactor.hxx \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h

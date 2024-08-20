@@ -1,10 +1,10 @@
 CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/inspirefase/session_manager.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/session_manager.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/session_manager.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/inspireface.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/session_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/inspireface.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -20,9 +20,9 @@ CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -163,5 +163,5 @@ CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: \
  /usr/include/c++/12/bits/parse_numbers.h \
  /usr/include/c++/12/bits/std_mutex.h \
  /usr/include/c++/12/bits/unique_lock.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h \
  /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc

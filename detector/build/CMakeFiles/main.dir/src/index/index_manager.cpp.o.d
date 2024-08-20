@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/index/index_manager.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/index/index_manager.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/index/index_manager.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/index/index_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/index/index_manager.h \
  /usr/local/include/faiss/IndexFlat.h /usr/include/c++/12/vector \
  /usr/include/c++/12/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
@@ -175,18 +175,18 @@ CMakeFiles/main.dir/src/index/index_manager.cpp.o: \
  /usr/include/c++/12/backward/auto_ptr.h \
  /usr/include/c++/12/pstl/glue_memory_defs.h \
  /usr/include/c++/12/pstl/execution_defs.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/inspireface.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/inspireface.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
  /usr/include/c++/12/iostream /usr/include/c++/12/mutex \
  /usr/include/c++/12/bits/chrono.h /usr/include/c++/12/ratio \
  /usr/include/c++/12/limits /usr/include/c++/12/ctime \
  /usr/include/c++/12/bits/parse_numbers.h \
  /usr/include/c++/12/bits/std_mutex.h \
  /usr/include/c++/12/bits/unique_lock.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h \
- /home/ocean/Desktop/backend/detector/include/database/image_repository.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/image_repository.h \
  /usr/local/include/opencv4/opencv2/opencv.hpp \
  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/local/include/opencv4/opencv2/core.hpp \
@@ -371,7 +371,7 @@ CMakeFiles/main.dir/src/index/index_manager.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ocean/Desktop/backend/detector/include/database/database.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/database.h \
  /usr/include/pqxx/pqxx /usr/include/pqxx/array \
  /usr/include/pqxx/array.hxx /usr/include/pqxx/compiler-public.hxx \
  /usr/include/pqxx/config-public-compiler.h /usr/include/c++/12/ciso646 \
@@ -413,10 +413,10 @@ CMakeFiles/main.dir/src/index/index_manager.cpp.o: \
  /usr/include/pqxx/subtransaction /usr/include/pqxx/subtransaction.hxx \
  /usr/include/pqxx/transaction /usr/include/pqxx/transaction.hxx \
  /usr/include/pqxx/transactor /usr/include/pqxx/transactor.hxx \
- /home/ocean/Desktop/backend/detector/include/inspireface/face_feature_extractor.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/session_manager.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/messages/zmqbroker.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/face_feature_extractor.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/session_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/messages/zmqbroker.h \
  /usr/include/zmq.hpp /usr/include/zmq.h /usr/include/c++/12/cassert \
  /usr/include/c++/12/optional

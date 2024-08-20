@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/utils/logger.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/utils/logger.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/utils/logger.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -158,5 +158,5 @@ CMakeFiles/main.dir/src/utils/logger.cpp.o: \
  /usr/include/c++/12/bits/parse_numbers.h \
  /usr/include/c++/12/bits/std_mutex.h \
  /usr/include/c++/12/bits/unique_lock.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h \
  /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc

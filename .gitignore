@@ -1,2 +1,3 @@
 static/users/*
 detector/resource/archive/*
+__pycache__

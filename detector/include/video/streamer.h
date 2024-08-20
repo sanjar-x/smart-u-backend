@@ -29,7 +29,7 @@ private:
     std::mutex queue_mutex_;
     std::condition_variable cv_;
 
-    static const int NUM_THREADS = 2;
+    static const int NUM_THREADS = 12;
 
     void openStreams(std::vector<Camera> cameras);
     void processStream(Stream &stream, FaceFeatureExtractor &faceFeatureExtractor);

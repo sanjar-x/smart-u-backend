@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/video/stream.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/video/stream.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/video/stream.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/video/stream.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/video/stream.h \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -364,4 +364,4 @@ CMakeFiles/main.dir/src/video/stream.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ocean/Desktop/backend/detector/include/video/camera.h
+ /home/ocean/Desktop/smart-u-backend/detector/include/video/camera.h

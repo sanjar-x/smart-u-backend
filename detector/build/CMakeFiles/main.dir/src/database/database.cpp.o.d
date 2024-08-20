@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/database/database.cpp.o: \
- /home/ocean/Desktop/backend/detector/src/database/database.cpp \
+ /home/ocean/Desktop/smart-u-backend/detector/src/database/database.cpp \
  /usr/include/stdc-predef.h \
- /home/ocean/Desktop/backend/detector/include/database/database.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/database.h \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -223,10 +223,10 @@ CMakeFiles/main.dir/src/database/database.cpp.o: \
  /usr/include/pqxx/subtransaction /usr/include/pqxx/subtransaction.hxx \
  /usr/include/pqxx/transaction /usr/include/pqxx/transaction.hxx \
  /usr/include/pqxx/transactor /usr/include/pqxx/transactor.hxx \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
  /usr/include/c++/12/iostream /usr/include/c++/12/mutex \
  /usr/include/c++/12/bits/chrono.h /usr/include/c++/12/ratio \
  /usr/include/c++/12/ctime /usr/include/c++/12/bits/parse_numbers.h \
  /usr/include/c++/12/bits/std_mutex.h \
  /usr/include/c++/12/bits/unique_lock.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h

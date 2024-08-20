@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/ocean/Desktop/backend/detector/CMakeLists.txt"
+  "/home/ocean/Desktop/smart-u-backend/detector/CMakeLists.txt"
   "CMakeFiles/3.30.20240730-g8639ac2/CMakeCCompiler.cmake"
   "CMakeFiles/3.30.20240730-g8639ac2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.30.20240730-g8639ac2/CMakeSystem.cmake"

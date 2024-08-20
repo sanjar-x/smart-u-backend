@@ -96,4 +96,4 @@ class GroupResponse(Group):
     id: UUID = Field(title="User’s id", description="User’s id")
     students: List[UserResponse]
     tutor: UserResponse
-    department: DepartmentResponse
+    department: DepartmentResponse | None

@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ocean/Desktop/backend/detector
+CMAKE_SOURCE_DIR = /home/ocean/Desktop/smart-u-backend/detector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ocean/Desktop/backend/detector/build
+CMAKE_BINARY_DIR = /home/ocean/Desktop/smart-u-backend/detector/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -73,186 +73,186 @@ CMakeFiles/main.dir/codegen:
 .PHONY : CMakeFiles/main.dir/codegen
 
 CMakeFiles/main.dir/src/database/camera_repository.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/database/camera_repository.cpp.o: /home/ocean/Desktop/backend/detector/src/database/camera_repository.cpp
+CMakeFiles/main.dir/src/database/camera_repository.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/database/camera_repository.cpp
 CMakeFiles/main.dir/src/database/camera_repository.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/database/camera_repository.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/camera_repository.cpp.o -MF CMakeFiles/main.dir/src/database/camera_repository.cpp.o.d -o CMakeFiles/main.dir/src/database/camera_repository.cpp.o -c /home/ocean/Desktop/backend/detector/src/database/camera_repository.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/database/camera_repository.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/camera_repository.cpp.o -MF CMakeFiles/main.dir/src/database/camera_repository.cpp.o.d -o CMakeFiles/main.dir/src/database/camera_repository.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/database/camera_repository.cpp
 
 CMakeFiles/main.dir/src/database/camera_repository.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/database/camera_repository.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/database/camera_repository.cpp > CMakeFiles/main.dir/src/database/camera_repository.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/database/camera_repository.cpp > CMakeFiles/main.dir/src/database/camera_repository.cpp.i
 
 CMakeFiles/main.dir/src/database/camera_repository.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/database/camera_repository.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/database/camera_repository.cpp -o CMakeFiles/main.dir/src/database/camera_repository.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/database/camera_repository.cpp -o CMakeFiles/main.dir/src/database/camera_repository.cpp.s
 
 CMakeFiles/main.dir/src/database/database.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/database/database.cpp.o: /home/ocean/Desktop/backend/detector/src/database/database.cpp
+CMakeFiles/main.dir/src/database/database.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/database/database.cpp
 CMakeFiles/main.dir/src/database/database.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/database/database.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/database.cpp.o -MF CMakeFiles/main.dir/src/database/database.cpp.o.d -o CMakeFiles/main.dir/src/database/database.cpp.o -c /home/ocean/Desktop/backend/detector/src/database/database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/database/database.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/database.cpp.o -MF CMakeFiles/main.dir/src/database/database.cpp.o.d -o CMakeFiles/main.dir/src/database/database.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/database/database.cpp
 
 CMakeFiles/main.dir/src/database/database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/database/database.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/database/database.cpp > CMakeFiles/main.dir/src/database/database.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/database/database.cpp > CMakeFiles/main.dir/src/database/database.cpp.i
 
 CMakeFiles/main.dir/src/database/database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/database/database.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/database/database.cpp -o CMakeFiles/main.dir/src/database/database.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/database/database.cpp -o CMakeFiles/main.dir/src/database/database.cpp.s
 
 CMakeFiles/main.dir/src/database/image_repository.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/database/image_repository.cpp.o: /home/ocean/Desktop/backend/detector/src/database/image_repository.cpp
+CMakeFiles/main.dir/src/database/image_repository.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/database/image_repository.cpp
 CMakeFiles/main.dir/src/database/image_repository.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/database/image_repository.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/image_repository.cpp.o -MF CMakeFiles/main.dir/src/database/image_repository.cpp.o.d -o CMakeFiles/main.dir/src/database/image_repository.cpp.o -c /home/ocean/Desktop/backend/detector/src/database/image_repository.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/database/image_repository.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/database/image_repository.cpp.o -MF CMakeFiles/main.dir/src/database/image_repository.cpp.o.d -o CMakeFiles/main.dir/src/database/image_repository.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/database/image_repository.cpp
 
 CMakeFiles/main.dir/src/database/image_repository.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/database/image_repository.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/database/image_repository.cpp > CMakeFiles/main.dir/src/database/image_repository.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/database/image_repository.cpp > CMakeFiles/main.dir/src/database/image_repository.cpp.i
 
 CMakeFiles/main.dir/src/database/image_repository.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/database/image_repository.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/database/image_repository.cpp -o CMakeFiles/main.dir/src/database/image_repository.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/database/image_repository.cpp -o CMakeFiles/main.dir/src/database/image_repository.cpp.s
 
 CMakeFiles/main.dir/src/index/index_manager.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/index/index_manager.cpp.o: /home/ocean/Desktop/backend/detector/src/index/index_manager.cpp
+CMakeFiles/main.dir/src/index/index_manager.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/index/index_manager.cpp
 CMakeFiles/main.dir/src/index/index_manager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/index/index_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/index/index_manager.cpp.o -MF CMakeFiles/main.dir/src/index/index_manager.cpp.o.d -o CMakeFiles/main.dir/src/index/index_manager.cpp.o -c /home/ocean/Desktop/backend/detector/src/index/index_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/index/index_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/index/index_manager.cpp.o -MF CMakeFiles/main.dir/src/index/index_manager.cpp.o.d -o CMakeFiles/main.dir/src/index/index_manager.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/index/index_manager.cpp
 
 CMakeFiles/main.dir/src/index/index_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/index/index_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/index/index_manager.cpp > CMakeFiles/main.dir/src/index/index_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/index/index_manager.cpp > CMakeFiles/main.dir/src/index/index_manager.cpp.i
 
 CMakeFiles/main.dir/src/index/index_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/index/index_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/index/index_manager.cpp -o CMakeFiles/main.dir/src/index/index_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/index/index_manager.cpp -o CMakeFiles/main.dir/src/index/index_manager.cpp.s
 
 CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: /home/ocean/Desktop/backend/detector/src/inspirefase/face_feature_extractor.cpp
+CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/face_feature_extractor.cpp
 CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o -MF CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o.d -o CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o -c /home/ocean/Desktop/backend/detector/src/inspirefase/face_feature_extractor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o -MF CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o.d -o CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/face_feature_extractor.cpp
 
 CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/inspirefase/face_feature_extractor.cpp > CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/face_feature_extractor.cpp > CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.i
 
 CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/inspirefase/face_feature_extractor.cpp -o CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/face_feature_extractor.cpp -o CMakeFiles/main.dir/src/inspirefase/face_feature_extractor.cpp.s
 
 CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: /home/ocean/Desktop/backend/detector/src/inspirefase/session_manager.cpp
+CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/session_manager.cpp
 CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o -MF CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o.d -o CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o -c /home/ocean/Desktop/backend/detector/src/inspirefase/session_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o -MF CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o.d -o CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/session_manager.cpp
 
 CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/inspirefase/session_manager.cpp > CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/session_manager.cpp > CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.i
 
 CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/inspirefase/session_manager.cpp -o CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/inspirefase/session_manager.cpp -o CMakeFiles/main.dir/src/inspirefase/session_manager.cpp.s
 
 CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: /home/ocean/Desktop/backend/detector/src/messages/zmqbroker.cpp
+CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/messages/zmqbroker.cpp
 CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o -MF CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o.d -o CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o -c /home/ocean/Desktop/backend/detector/src/messages/zmqbroker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o -MF CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o.d -o CMakeFiles/main.dir/src/messages/zmqbroker.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/messages/zmqbroker.cpp
 
 CMakeFiles/main.dir/src/messages/zmqbroker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/messages/zmqbroker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/messages/zmqbroker.cpp > CMakeFiles/main.dir/src/messages/zmqbroker.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/messages/zmqbroker.cpp > CMakeFiles/main.dir/src/messages/zmqbroker.cpp.i
 
 CMakeFiles/main.dir/src/messages/zmqbroker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/messages/zmqbroker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/messages/zmqbroker.cpp -o CMakeFiles/main.dir/src/messages/zmqbroker.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/messages/zmqbroker.cpp -o CMakeFiles/main.dir/src/messages/zmqbroker.cpp.s
 
 CMakeFiles/main.dir/src/utils/common.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/utils/common.cpp.o: /home/ocean/Desktop/backend/detector/src/utils/common.cpp
+CMakeFiles/main.dir/src/utils/common.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/utils/common.cpp
 CMakeFiles/main.dir/src/utils/common.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/utils/common.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/utils/common.cpp.o -MF CMakeFiles/main.dir/src/utils/common.cpp.o.d -o CMakeFiles/main.dir/src/utils/common.cpp.o -c /home/ocean/Desktop/backend/detector/src/utils/common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/utils/common.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/utils/common.cpp.o -MF CMakeFiles/main.dir/src/utils/common.cpp.o.d -o CMakeFiles/main.dir/src/utils/common.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/utils/common.cpp
 
 CMakeFiles/main.dir/src/utils/common.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/utils/common.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/utils/common.cpp > CMakeFiles/main.dir/src/utils/common.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/utils/common.cpp > CMakeFiles/main.dir/src/utils/common.cpp.i
 
 CMakeFiles/main.dir/src/utils/common.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/utils/common.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/utils/common.cpp -o CMakeFiles/main.dir/src/utils/common.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/utils/common.cpp -o CMakeFiles/main.dir/src/utils/common.cpp.s
 
 CMakeFiles/main.dir/src/utils/logger.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/utils/logger.cpp.o: /home/ocean/Desktop/backend/detector/src/utils/logger.cpp
+CMakeFiles/main.dir/src/utils/logger.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/utils/logger.cpp
 CMakeFiles/main.dir/src/utils/logger.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/utils/logger.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/utils/logger.cpp.o -MF CMakeFiles/main.dir/src/utils/logger.cpp.o.d -o CMakeFiles/main.dir/src/utils/logger.cpp.o -c /home/ocean/Desktop/backend/detector/src/utils/logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/utils/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/utils/logger.cpp.o -MF CMakeFiles/main.dir/src/utils/logger.cpp.o.d -o CMakeFiles/main.dir/src/utils/logger.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/utils/logger.cpp
 
 CMakeFiles/main.dir/src/utils/logger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/utils/logger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/utils/logger.cpp > CMakeFiles/main.dir/src/utils/logger.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/utils/logger.cpp > CMakeFiles/main.dir/src/utils/logger.cpp.i
 
 CMakeFiles/main.dir/src/utils/logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/utils/logger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/utils/logger.cpp -o CMakeFiles/main.dir/src/utils/logger.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/utils/logger.cpp -o CMakeFiles/main.dir/src/utils/logger.cpp.s
 
 CMakeFiles/main.dir/src/video/camera.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/video/camera.cpp.o: /home/ocean/Desktop/backend/detector/src/video/camera.cpp
+CMakeFiles/main.dir/src/video/camera.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/video/camera.cpp
 CMakeFiles/main.dir/src/video/camera.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/video/camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/camera.cpp.o -MF CMakeFiles/main.dir/src/video/camera.cpp.o.d -o CMakeFiles/main.dir/src/video/camera.cpp.o -c /home/ocean/Desktop/backend/detector/src/video/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/video/camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/camera.cpp.o -MF CMakeFiles/main.dir/src/video/camera.cpp.o.d -o CMakeFiles/main.dir/src/video/camera.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/video/camera.cpp
 
 CMakeFiles/main.dir/src/video/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/video/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/video/camera.cpp > CMakeFiles/main.dir/src/video/camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/video/camera.cpp > CMakeFiles/main.dir/src/video/camera.cpp.i
 
 CMakeFiles/main.dir/src/video/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/video/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/video/camera.cpp -o CMakeFiles/main.dir/src/video/camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/video/camera.cpp -o CMakeFiles/main.dir/src/video/camera.cpp.s
 
 CMakeFiles/main.dir/src/video/stream.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/video/stream.cpp.o: /home/ocean/Desktop/backend/detector/src/video/stream.cpp
+CMakeFiles/main.dir/src/video/stream.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/video/stream.cpp
 CMakeFiles/main.dir/src/video/stream.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/video/stream.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/stream.cpp.o -MF CMakeFiles/main.dir/src/video/stream.cpp.o.d -o CMakeFiles/main.dir/src/video/stream.cpp.o -c /home/ocean/Desktop/backend/detector/src/video/stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/main.dir/src/video/stream.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/stream.cpp.o -MF CMakeFiles/main.dir/src/video/stream.cpp.o.d -o CMakeFiles/main.dir/src/video/stream.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/video/stream.cpp
 
 CMakeFiles/main.dir/src/video/stream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/video/stream.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/video/stream.cpp > CMakeFiles/main.dir/src/video/stream.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/video/stream.cpp > CMakeFiles/main.dir/src/video/stream.cpp.i
 
 CMakeFiles/main.dir/src/video/stream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/video/stream.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/video/stream.cpp -o CMakeFiles/main.dir/src/video/stream.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/video/stream.cpp -o CMakeFiles/main.dir/src/video/stream.cpp.s
 
 CMakeFiles/main.dir/src/video/streamer.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/video/streamer.cpp.o: /home/ocean/Desktop/backend/detector/src/video/streamer.cpp
+CMakeFiles/main.dir/src/video/streamer.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/src/video/streamer.cpp
 CMakeFiles/main.dir/src/video/streamer.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/video/streamer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/streamer.cpp.o -MF CMakeFiles/main.dir/src/video/streamer.cpp.o.d -o CMakeFiles/main.dir/src/video/streamer.cpp.o -c /home/ocean/Desktop/backend/detector/src/video/streamer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/main.dir/src/video/streamer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/video/streamer.cpp.o -MF CMakeFiles/main.dir/src/video/streamer.cpp.o.d -o CMakeFiles/main.dir/src/video/streamer.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/src/video/streamer.cpp
 
 CMakeFiles/main.dir/src/video/streamer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/video/streamer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/src/video/streamer.cpp > CMakeFiles/main.dir/src/video/streamer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/src/video/streamer.cpp > CMakeFiles/main.dir/src/video/streamer.cpp.i
 
 CMakeFiles/main.dir/src/video/streamer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/video/streamer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/src/video/streamer.cpp -o CMakeFiles/main.dir/src/video/streamer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/src/video/streamer.cpp -o CMakeFiles/main.dir/src/video/streamer.cpp.s
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cpp.o: /home/ocean/Desktop/backend/detector/main.cpp
+CMakeFiles/main.dir/main.cpp.o: /home/ocean/Desktop/smart-u-backend/detector/main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/ocean/Desktop/backend/detector/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/ocean/Desktop/smart-u-backend/detector/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/backend/detector/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ocean/Desktop/smart-u-backend/detector/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/backend/detector/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ocean/Desktop/smart-u-backend/detector/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -295,7 +295,7 @@ main: /usr/local/lib/libopencv_imgproc.so.4.8.0
 main: /usr/local/lib/libopencv_core.so.4.8.0
 main: /usr/local/lib/libopencv_cudev.so.4.8.0
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ocean/Desktop/backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -307,6 +307,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/ocean/Desktop/backend/detector/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ocean/Desktop/backend/detector /home/ocean/Desktop/backend/detector /home/ocean/Desktop/backend/detector/build /home/ocean/Desktop/backend/detector/build /home/ocean/Desktop/backend/detector/build/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ocean/Desktop/smart-u-backend/detector/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ocean/Desktop/smart-u-backend/detector /home/ocean/Desktop/smart-u-backend/detector /home/ocean/Desktop/smart-u-backend/detector/build /home/ocean/Desktop/smart-u-backend/detector/build /home/ocean/Desktop/smart-u-backend/detector/build/CMakeFiles/main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/main.dir/depend
 

@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/main.cpp.o: \
- /home/ocean/Desktop/backend/detector/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/12/iostream \
+ /home/ocean/Desktop/smart-u-backend/detector/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -155,12 +155,12 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/bits/chrono.h /usr/include/c++/12/ratio \
  /usr/include/c++/12/limits /usr/include/c++/12/ctime \
  /usr/include/c++/12/bits/parse_numbers.h \
- /home/ocean/Desktop/backend/detector/include/utils/logger.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/logger.h \
  /usr/include/c++/12/mutex /usr/include/c++/12/bits/std_mutex.h \
  /usr/include/c++/12/bits/unique_lock.h \
- /home/ocean/Desktop/backend/detector/include/utils/common.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/utils/common.h \
  /usr/include/c++/12/sstream /usr/include/c++/12/bits/sstream.tcc \
- /home/ocean/Desktop/backend/detector/include/database/image_repository.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/image_repository.h \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
@@ -364,7 +364,7 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ocean/Desktop/backend/detector/include/database/database.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/database.h \
  /usr/include/pqxx/pqxx /usr/include/pqxx/array \
  /usr/include/pqxx/array.hxx /usr/include/pqxx/compiler-public.hxx \
  /usr/include/pqxx/config-public-compiler.h /usr/include/c++/12/ciso646 \
@@ -406,24 +406,24 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/pqxx/subtransaction /usr/include/pqxx/subtransaction.hxx \
  /usr/include/pqxx/transaction /usr/include/pqxx/transaction.hxx \
  /usr/include/pqxx/transactor /usr/include/pqxx/transactor.hxx \
- /home/ocean/Desktop/backend/detector/include/database/camera_repository.h \
- /home/ocean/Desktop/backend/detector/include/video/camera.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/face_feature_extractor.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/session_manager.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/inspireface.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/intypedef.h \
- /home/ocean/Desktop/backend/detector/include/inspireface/herror.h \
- /home/ocean/Desktop/backend/detector/include/index/index_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/database/camera_repository.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/video/camera.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/face_feature_extractor.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/session_manager.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/inspireface.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/intypedef.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/inspireface/herror.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/index/index_manager.h \
  /usr/local/include/faiss/IndexFlat.h \
  /usr/local/include/faiss/IndexFlatCodes.h \
  /usr/local/include/faiss/Index.h /usr/local/include/faiss/MetricType.h \
  /usr/local/include/faiss/impl/platform_macros.h \
  /usr/local/include/faiss/impl/DistanceComputer.h \
- /home/ocean/Desktop/backend/detector/include/messages/zmqbroker.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/messages/zmqbroker.h \
  /usr/include/zmq.hpp /usr/include/zmq.h /usr/include/c++/12/cassert \
  /usr/include/c++/12/optional \
- /home/ocean/Desktop/backend/detector/include/video/streamer.h \
+ /home/ocean/Desktop/smart-u-backend/detector/include/video/streamer.h \
  /usr/include/c++/12/condition_variable \
- /home/ocean/Desktop/backend/detector/include/video/stream.h
+ /home/ocean/Desktop/smart-u-backend/detector/include/video/stream.h

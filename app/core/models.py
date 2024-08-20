@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import uuid
 from enum import Enum
-from datetime import date, time
+from datetime import date, time, datetime
 from typing import Any, BinaryIO, List, Optional, Union
 
 from passlib.context import CryptContext
@@ -15,6 +15,7 @@ from sqlalchemy import (
     extract,
     and_,
     or_,
+    func,
 )
 from sqlalchemy.dialects.postgresql import (
     BOOLEAN,
@@ -26,6 +27,7 @@ from sqlalchemy.dialects.postgresql import (
     TIME,
     UUID,
     VARCHAR,
+    TIMESTAMP,
 )
 from sqlalchemy.ext.asyncio import AsyncSession, AsyncAttrs
 from sqlalchemy.future import select
@@ -123,6 +125,30 @@ class Base(DeclarativeBase, AsyncAttrs):
 
     async def get(self, session: AsyncSession):
         obj = await session.get(self.__class__, self.id)
+        await self._setattr_instance(obj)
+        return obj
+
+    async def get_with_filter(self, session: AsyncSession, filter):
+        result = await session.execute(select(self.__class__).filter(filter))
+        obj = result.scalar_one_or_none()
+        return await self._setattr_instance(obj)
+
+    async def get_with_filter_with_options(
+        self, session: AsyncSession, filter, options
+    ):
+        result = await session.execute(
+            select(self.__class__).filter(filter).options(options)
+        )
+        obj = result.scalar_one_or_none()
+        return await self._setattr_instance(obj)
+
+    async def get_with_filter_with_multi_options(
+        self, session: AsyncSession, filter, options
+    ):
+        result = await session.execute(
+            select(self.__class__).filter(filter).options(options)
+        )
+        obj = result.scalar_one_or_none()
         return await self._setattr_instance(obj)
 
     async def get_where(self, session: AsyncSession, condition):
@@ -138,13 +164,14 @@ class Base(DeclarativeBase, AsyncAttrs):
         return await self._setattr_instance(obj)
 
     async def get_where_with_multi_options(
-        self, session: AsyncSession, condition, *options
+        self, session: AsyncSession, condition, options: List[Any]
     ):
         result = await session.execute(
             select(self.__class__).where(condition).options(*options)
         )
         obj = result.scalar_one_or_none()
-        return await self._setattr_instance(obj)
+        await self._setattr_instance(obj)
+        return obj
 
     async def get_all(self, session: AsyncSession):
         result = await session.execute(select(self.__class__))
@@ -155,6 +182,14 @@ class Base(DeclarativeBase, AsyncAttrs):
         return list(result.scalars().all())
 
     async def get_all_where_with_options(
+        self, session: AsyncSession, condition, options: List[Any]
+    ):
+        result = await session.execute(
+            select(self.__class__).where(condition).options(*options)
+        )
+        return list(result.scalars().all())
+
+    async def get_all_where_with_multi_options(
         self, session: AsyncSession, condition, options: List[Any]
     ):
         result = await session.execute(
@@ -232,7 +267,7 @@ class Role(Base):
             joinedload(self.__class__.profile_permissions),
         ]
         return await self.get_where_with_multi_options(
-            session, self.__class__.id == self.id, *options
+            session, self.__class__.id == self.id, options
         )
 
     async def get_all_with_managers(self, session: AsyncSession):
@@ -481,7 +516,7 @@ class Manager(User):
             ),
         ]
         await self.get_where_with_multi_options(
-            session, self.__class__.id == self.id, *options
+            session, self.__class__.id == self.id, options
         )
 
         return self
@@ -513,11 +548,10 @@ class Department(Base):
         )
 
     async def get_with_manager(self, session: AsyncSession):
-        options = [
+        return await self.get_where_with_options(
+            session,
+            self.__class__.id == self.id,
             joinedload(self.__class__.manager),
-        ]
-        return await self.get_where_with_multi_options(
-            session, self.__class__.id == self.id, *options
         )
 
 
@@ -544,6 +578,33 @@ class Teacher(User):
         return await self.search_with_options_and_multi_filters(
             session, joinedload(self.__class__.image), filters
         )
+
+    async def get_active_pair(self, session: AsyncSession):
+
+        current_datetime = datetime.now()
+        current_time = current_datetime.time()
+        current_date = current_datetime.date()
+        statement = (
+            select(self.__class__)
+            .options(
+                joinedload(self.__class__.pairs).joinedload(Pair.slot),
+                joinedload(self.__class__.pairs).joinedload(Pair.date),
+                joinedload(self.__class__.pairs)
+                .joinedload(Pair.groups)
+                .joinedload(Group.students),
+                joinedload(self.__class__.pairs)
+                .joinedload(Pair.room)
+                .joinedload(Room.cameras),
+            )
+            .filter(
+                Date.date == current_date,
+                Slot.start_time <= current_time,
+                current_time <= Slot.end_time,
+            )
+        )
+
+        result = await session.execute(statement)
+        return result.scalar_one_or_none()
 
 
 groups_pairs_association = Table(
@@ -621,7 +682,7 @@ class Group(Base):
         self, session: AsyncSession
     ):
         options = [
-            joinedload(self.__class__.department),  # Eagerly load Department
+            joinedload(self.__class__.department),
             joinedload(self.__class__.tutor).joinedload(
                 self.__class__.tutor.property.mapper.class_.image
             ),
@@ -638,7 +699,7 @@ class Group(Base):
             selectinload(self.__class__.students),  # Eagerly load Students
         ]
         return await self.get_where_with_multi_options(
-            session, self.__class__.id == self.id, *options
+            session, self.__class__.id == self.id, options
         )
 
 
@@ -755,6 +816,16 @@ class Slot(Base):
     start_time: Mapped[time] = mapped_column(TIME, nullable=False)
     end_time: Mapped[time] = mapped_column(TIME, nullable=False)
 
+    async def get_active(self, session: AsyncSession):
+        active_time = datetime.now().time()
+        await self.get_where(
+            session=session,
+            condition=and_(
+                self.__class__.start_time < active_time,
+                active_time < self.__class__.end_time,
+            ),
+        )
+
     async def exist_time(self, session: AsyncSession):
         return await self.exists(
             session,
@@ -773,11 +844,20 @@ class Date(Base):
     date: Mapped[date] = mapped_column(DATE, nullable=False)
     pairs: Mapped[List[Pair]] = relationship("Pair", back_populates="date")
 
+    def __eq__(self, other):
+        if not isinstance(other, Date):
+            return False
+        return self.date == other.date
+
     async def exist_date(self, session: AsyncSession):
         return await self.exists(session, self.__class__.date == self.date)
 
     async def get_by_date(self, session: AsyncSession):
         return await self.get_where(session, self.__class__.date == self.date)
+
+    async def get_active_date(self, session: AsyncSession):
+        active_date = datetime.now().date()
+        return await self.get_where(session, self.__class__.date == active_date)
 
     async def get_by_year_and_month(
         self,
@@ -812,7 +892,7 @@ class Date(Base):
             filters.append(extract("YEAR", self.__class__.date) == year)
             filters.append(extract("MONTH", self.__class__.date) == month)
 
-        return await self.get_all_where_with_options(
+        return await self.get_all_where_with_multi_options(
             session,
             and_(*filters),
             options,
@@ -857,6 +937,51 @@ class Pair(Base):
                 )
             )
 
+    async def get_all_by_teacher(
+        self,
+        session: AsyncSession,
+    ):
+        options = [
+            joinedload(self.__class__.date),
+            joinedload(self.__class__.slot),
+            joinedload(self.__class__.room).selectinload(
+                self.__class__.room.property.mapper.class_.cameras
+            ),
+            joinedload(self.__class__.subject),
+            selectinload(self.__class__.groups)
+            .selectinload(self.__class__.groups.property.mapper.class_.students)
+            .joinedload(
+                self.__class__.groups.property.mapper.class_.students.property.mapper.class_.image
+            ),
+        ]
+        return await self.get_all_where_with_multi_options(
+            session,
+            and_(
+                self.__class__.teacher_id == self.teacher_id,
+                self.__class__.date_id == self.date_id,
+            ),
+            options,
+        )
+
+    async def get_with_groups_with_students_by_date_and_time_and_teacher(
+        self,
+        session: AsyncSession,
+    ):
+        options = [
+            selectinload(self.__class__.groups).selectinload(
+                self.__class__.groups.property.mapper.class_.students
+            )
+        ]
+        return await self.get_where_with_multi_options(
+            session,
+            and_(
+                self.__class__.teacher_id == self.teacher_id,
+                self.__class__.date_id == self.date_id,
+                self.__class__.slot_id == self.slot_id,
+            ),
+            options,
+        )
+
     async def get_by_year_and_month(
         self,
         session: AsyncSession,
@@ -877,11 +1002,34 @@ class Pair(Base):
             selectinload(self.__class__.groups),
         ]
         filters = [self.__class__.groups.any(id=group_id)]
-        # if year and month:
-        #     filters.append(extract("YEAR", self.__class__.date) == year)
-        #     filters.append(extract("MONTH", self.__class__.date) == month)
+        if year and month:
+            filters.append(extract("YEAR", self.__class__.date) == year)
+            filters.append(extract("MONTH", self.__class__.date) == month)
 
-        return await self.get_all_where_with_options(
+        return await self.get_all_where_with_multi_options(
+            session,
+            and_(*filters),
+            options,
+        )
+
+    async def get_by_slot_and_date(self, session: AsyncSession):
+        options = [
+            joinedload(self.__class__.date),
+            joinedload(self.__class__.slot),
+            joinedload(self.__class__.room).selectinload(
+                self.__class__.room.property.mapper.class_.cameras
+            ),
+            joinedload(self.__class__.teacher),
+            joinedload(self.__class__.subject),
+            selectinload(self.__class__.groups).selectinload(
+                self.__class__.groups.property.mapper.class_.students
+            ),
+        ]
+        filters = [
+            self.__class__.slot_id == self.slot_id,
+            self.__class__.date_id == self.date_id,
+        ]
+        return await self.get_all_where_with_multi_options(
             session,
             and_(*filters),
             options,
@@ -910,3 +1058,31 @@ class Pair(Base):
         return await self.search_with_multi_options_and_multi_filters(
             session, options, filters
         )
+
+
+class Detection(Base):
+    __tablename__ = "detections"
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    camera_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("cameras.id", ondelete="SET NULL")
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL")
+    )
+    time: Mapped[datetime] = mapped_column(TIMESTAMP)
+
+    async def get_max(self, session: AsyncSession):
+        result = await session.execute(select(func.max(self.__class__.time)))
+        obj = result.scalar_one_or_none()
+        return await self._setattr_instance(obj)
+
+    async def get_range(
+        self, session: AsyncSession, start_time: float, end_time: float
+    ):
+        stmt = select(self.__class__).where(
+            self.__class__.time.between(start_time, end_time)
+        )
+        result = await session.execute(stmt)
+        return result.scalars().all()

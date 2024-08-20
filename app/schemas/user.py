@@ -118,6 +118,51 @@ class UserResponse(BaseModel):
     type: str
 
 
+class UserImageResponse(BaseModel):
+    model_config = config
+    id: UUID = Field(title="User’s id", description="User’s id")
+    pini: str = Field(
+        title="User’s pini",
+        description="User’s pini",
+        examples=["12345678901234"],
+    )
+    first_name: str = Field(
+        title="User’s first name",
+        description="User’s first name",
+        examples=["Anvar"],
+    )
+    last_name: str = Field(
+        title="User’s last name",
+        description="User’s last name",
+        examples=["Anvarov"],
+    )
+    middle_name: Optional[str] = Field(
+        title="User’s middle name",
+        description="User’s middle name",
+        examples=["Anvarovich"],
+    )
+    birth_date: date
+    phone_number: str = Field(
+        title="User’s phone number",
+        description="User’s phone number",
+        examples=["+998901234567"],
+    )
+    active: bool = Field(
+        title="Checkbox",
+        description="User status",
+        examples=[True, False],
+    )
+    address: str = Field(
+        title="User’s address",
+        description="User’s address",
+        examples=[
+            "Namangan viloyati, Turaqo'rg'on tumani, Sharq MFY, Bog' ko'cha 18-uy"
+        ],
+    )
+    type: str
+    image: Optional[ImageResponse]
+
+
 class UserRoleResponse(BaseModel):
     model_config = config
     id: UUID = Field(title="User’s id", description="User’s id")
@@ -206,7 +251,7 @@ class UserRolePermissionsResourceResponse(BaseModel):
     role: RolePermissionsResourceResponse
 
 
-class UserImageAndRolePermissionsResourceResponse(BaseModel):
+class ManagerImageAndRolePermissionsResourceResponse(BaseModel):
     model_config = config
     id: UUID = Field(title="User’s id", description="User’s id")
     pini: str = Field(
