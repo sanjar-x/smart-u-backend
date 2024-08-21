@@ -1,7 +1,7 @@
 import os
 from uuid import UUID
 from typing import List, Optional, Union
-from datetime import date
+from datetime import datetime, date
 from pydantic import SecretStr
 from sqlalchemy.ext.asyncio import AsyncSession
 from PIL import UnidentifiedImageError, Image as PILImage
@@ -15,12 +15,21 @@ from ....schemas.manager import (
     ManagerImageRolePermissionsResourceResponse,
 )
 from ....services.auth.user import get
-from ....core.models import User, Manager, Image, Resource, Permissions
+from ....core.models import (
+    Resource,
+    Permissions,
+    Image,
+    User,
+    Manager,
+    Camera,
+    Detection,
+)
 from ....services.detector.face import check_face
 from ....services.tasks.initialization import (
     detector_engine_start,
     detector_engine_shutdown,
 )
+from ....services.cache.redis.client import client
 
 managers_router = APIRouter(prefix="/managers")
 
@@ -103,24 +112,49 @@ async def create_manager(
     }
 
 
+from logging import getLogger
+
+logger = getLogger("uvicorn")
+
+
 @managers_router.get(
     "/",
-    response_model=Union[
-        Optional[ManagerImageRolePermissionsResourceResponse],
-        List[ManagerImageRolePermissionsResourceResponse],
-    ],
+    response_model=List[ManagerImageRolePermissionsResourceResponse],
 )
 async def get_managers(
     query: str | None = None,
     session: AsyncSession = Depends(get_session),
 ):
     manager = Manager()
+    camera = Camera()
+    cameras = await camera.get_all_with_rooms(session)
     if query:
-        return await manager.search_by(session, query)
+        managers = await manager.search_by(session, query)
     else:
-        return await manager.get_all_with_image_and_role_with_permissions_with_resource(
-            session
+        managers = (
+            await manager.get_all_with_image_and_role_with_permissions_with_resource(
+                session
+            )
         )
+    for camera in cameras:
+        for manager in managers:
+            detection = Detection(camera_id=camera.id, user_id=manager.id)
+            key = f"detections:camera:{camera.id}:user:{manager.id}"
+            last_time = await detection.get_last(session)
+            if last_time:
+                results = await client.zrangebyscore(key, last_time.timestamp(), "+inf")
+            else:
+                results = await client.zrangebyscore(key, "-inf", "+inf")
+            for result in results:
+                new_detection = Detection(
+                    camera_id=camera.id,
+                    user_id=manager.id,
+                    time=datetime.fromtimestamp(float(result)),
+                )
+                await new_detection.save(session)
+                await client.zrem(key, result)
+
+    return managers
 
 
 @managers_router.delete("/")
@@ -129,8 +163,12 @@ async def delete_manager(
     session: AsyncSession = Depends(get_session),
 ):
     user = User(id=id)
+    manager = Manager(id=id)
     await user.get_with_image(session)
     if user.image:
-        os.remove(os.path.join(UPLOAD_DIR, user.image.file_name))
+        await user.image._delete(session)
+        # os.remove(os.path.join(UPLOAD_DIR, user.image.file_name))
     await user._delete(session)
-    return {"detail": "teacher deleted"}
+    await manager._delete(session)
+
+    return {"detail": "manager deleted"}

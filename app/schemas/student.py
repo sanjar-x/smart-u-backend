@@ -20,7 +20,7 @@ config = ConfigDict(from_attributes=True)
 
 class ImageResponse(BaseModel):
     model_config = config
-    file_path: FilePath
+    file_path: str
 
 
 class GroupType(str, Enum):
@@ -86,5 +86,5 @@ class StudentResponse(BaseModel):
             "Namangan viloyati, Turaqo'rg'on tumani, Sharq MFY, Bog' ko'cha 18-uy"
         ],
     )
-    image: ImageResponse
+    image: ImageResponse | None
     group: Optional[GroupResponse]

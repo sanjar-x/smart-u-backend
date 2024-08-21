@@ -90,32 +90,3 @@ async def default_database(
     )
     await jahongir.hach_password(SecretStr("iam3489495"))
     await jahongir.save(session)
-    azimjon = Manager(
-        id="6210d3c2-3a9a-44fd-9d09-37c2f4ad5f05",
-        role_id=saved_super_user.id,
-        pini="12345678901234",
-        first_name="Azimjon",
-        last_name="Jalilov",
-        middle_name="Abduhalil og'li",
-        birth_date=date(1999, 1, 13),
-        phone_number="+998999777955",
-        active=True,
-        address="Namangan viloyati, Namangan shaxar",
-    )
-    await azimjon.hach_password(SecretStr("13011999"))
-    await azimjon.save(session)
-
-    jahongir_image = Image(
-        id="7204ba59-6bea-435e-8751-5b8c2df57208",
-        file_name="7204ba59-6bea-435e-8751-5b8c2df57208.jpg",
-        file_path="static/users/7204ba59-6bea-435e-8751-5b8c2df57208.jpg",
-        file="exmple".encode(),
-    )
-    await jahongir_image.save(session)
-    azimjon_image = Image(
-        id="6210d3c2-3a9a-44fd-9d09-37c2f4ad5f05",
-        file_name="6210d3c2-3a9a-44fd-9d09-37c2f4ad5f05.jpg",
-        file_path="static/users/6210d3c2-3a9a-44fd-9d09-37c2f4ad5f05.jpg",
-        file="exmple".encode(),
-    )
-    await azimjon_image.save(session)

@@ -377,7 +377,9 @@ class User(Base, PasswordMixin, TokenMixin):
         "Image", cascade="all, delete-orphan", uselist=False
     )
     groups: Mapped[List[Group]] = relationship("Group", back_populates="tutor")
-
+    detections: Mapped[List[Detection]] = relationship(
+        "Detection", cascade="all, delete-orphan"
+    )
     __mapper_args__ = {
         "polymorphic_on": type,
         "polymorphic_identity": "user",
@@ -807,6 +809,12 @@ class Camera(Base):
     async def exist_camera(self, session: AsyncSession):
         return await self.exists(session, self.__class__.ip == self.ip)
 
+    async def get_all_with_rooms(self, session: AsyncSession):
+        return await self.get_all_with_options(
+            session,
+            joinedload(self.__class__.room),
+        )
+
 
 class Slot(Base):
     __tablename__ = "slots"
@@ -1069,14 +1077,20 @@ class Detection(Base):
         UUID(as_uuid=True), ForeignKey("cameras.id", ondelete="SET NULL")
     )
     user_id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL")
+        UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE")
     )
-    time: Mapped[datetime] = mapped_column(TIMESTAMP)
+    time: Mapped[datetime] = mapped_column(TIMESTAMP, unique=True)
 
-    async def get_max(self, session: AsyncSession):
-        result = await session.execute(select(func.max(self.__class__.time)))
-        obj = result.scalar_one_or_none()
-        return await self._setattr_instance(obj)
+    async def get_last(self, session: AsyncSession):
+        result = await session.execute(
+            select(func.max(self.__class__.time)).where(
+                and_(
+                    self.__class__.camera_id == self.camera_id,
+                    self.__class__.user_id == self.user_id,
+                )
+            )
+        )
+        return result.scalar_one_or_none()
 
     async def get_range(
         self, session: AsyncSession, start_time: float, end_time: float

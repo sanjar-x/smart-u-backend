@@ -1,7 +1,7 @@
 import os
 from uuid import UUID
 from typing import List, Optional, Union
-from datetime import date
+from datetime import datetime, date
 
 from pydantic import SecretStr
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,12 +9,19 @@ from PIL import UnidentifiedImageError, Image as PILImage
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from ...dependencies.session import get_session
 from ....schemas.teacher import TeacherResponse
-from ....core.models import Teacher, Image, User
+from ....core.models import (
+    Image,
+    User,
+    Teacher,
+    Camera,
+    Detection,
+)
 from ....services.detector.face import check_face
 from ....services.tasks.initialization import (
     detector_engine_start,
     detector_engine_shutdown,
 )
+from ....services.cache.redis.client import client
 
 teacher_router = APIRouter(prefix="/teachers")
 
@@ -80,8 +87,8 @@ async def create_teacher(
         file_path=image_file_path,
     )
     await teacher_image.save(session)
-    # await detector_engine_shutdown()
-    # await detector_engine_start()
+    await detector_engine_shutdown()
+    await detector_engine_start()
     return {
         "info": f"{saved_teacher.first_name}'s image saved at {teacher_image.file_path}"
     }
@@ -98,11 +105,34 @@ async def get_teacher(
     query: str | None = None,
     session: AsyncSession = Depends(get_session),
 ):
+
     teacher = Teacher()
+
     if query:
-        return await teacher.search_by(session, query)
+        teachers = await teacher.search_by(session, query)
     else:
-        return await teacher.get_all_with_image(session)
+        teachers = await teacher.get_all_with_image(session)
+
+    camera = Camera()
+    cameras = await camera.get_all_with_rooms(session)
+    for camera in cameras:
+        for teacher in teachers:
+            detection = Detection(camera_id=camera.id, user_id=teacher.id)
+            key = f"detections:camera:{camera.id}:user:{teacher.id}"
+            last_time = await detection.get_last(session)
+            if last_time:
+                results = await client.zrangebyscore(key, last_time.timestamp(), "+inf")
+            else:
+                results = await client.zrangebyscore(key, "-inf", "+inf")
+            for result in results:
+                new_detection = Detection(
+                    camera_id=camera.id,
+                    user_id=teacher.id,
+                    time=datetime.fromtimestamp(float(result)),
+                )
+                await new_detection.save(session)
+                await client.zrem(key, result)
+    return teachers
 
 
 @teacher_router.delete("/")
@@ -111,8 +141,12 @@ async def delete_teacher(
     session: AsyncSession = Depends(get_session),
 ):
     user = User(id=id)
+    teacher = Teacher(id=id)
     await user.get_with_image(session)
     if user.image:
-        os.remove(os.path.join(UPLOAD_DIR, user.image.file_name))
+        await user.image._delete(session)
+        # os.remove(os.path.join(UPLOAD_DIR, user.image.file_name))
     await user._delete(session)
+    await teacher._delete(session)
+
     return {"detail": "teacher deleted"}

@@ -1,6 +1,6 @@
 from typing import List
 from subprocess import Popen, PIPE
-from asyncio import create_task
+from asyncio import create_task, all_tasks
 from fastapi import APIRouter
 from ....services.messages.zeromq import start_zeroMQ
 from ....services.tasks.scheduler import scheduler
@@ -16,9 +16,6 @@ process = None
 @system_router.get("/reload")
 async def reload():
     await shutdown()
-    Popen(["./detector/scripts/clean.sh"], stdout=PIPE, stderr=PIPE)
-    build_process = Popen(["./detector/scripts/build.sh"], stdout=PIPE, stderr=PIPE)
-    build_process.communicate()
     await initialize()
     return {"status": "system reload"}
 

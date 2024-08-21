@@ -1,5 +1,5 @@
 from logging import getLogger
-from asyncio import create_task
+from asyncio import Task, create_task, current_task, all_tasks
 from subprocess import Popen, PIPE
 from ...services.cache.redis.client import client
 from ...services.tasks.scheduler import jobstore, scheduler
@@ -13,6 +13,7 @@ from ...api.dependencies.session import async_session
 logger = getLogger("uvicorn")
 
 detector_process = None
+zero_mq_task: Task
 
 
 async def init_database():
@@ -63,11 +64,12 @@ async def detector_engine_start():
 
 async def initialize():
     await init_database()
-    await initialize_redis()
+    # await initialize_redis()
     await init_pairs()
     scheduler.start()  # type: ignore
     await detector_engine_start()
-    create_task(start_zeroMQ("ipc:///tmp/zeromq-ipc"))
+    global zero_mq_task
+    zero_mq_task = create_task(start_zeroMQ("ipc:///tmp/zeromq-ipc"))
     logger.info("System initialization complete.")
 
 

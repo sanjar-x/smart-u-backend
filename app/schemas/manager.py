@@ -20,7 +20,7 @@ config = ConfigDict(from_attributes=True)
 
 class ImageResponse(BaseModel):
     model_config = config
-    file_path: FilePath
+    file_path: str
 
 
 class ResourceResponse(BaseModel):
